@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="theme-color" content="#101d24">
+ <title>Numbercraft · Build a mind for maths</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <div class="app">
+  <aside class="rail">
+   <a class="brand" href="#home" aria-label="Numbercraft home"><span class="brandmark">n<span>⁺</span></span><span>numbercraft<small>BUILD A MIND FOR MATHS</small></span></a>
+   <nav aria-label="Main navigation">
+    <button class="nav active" data-nav="home"><span aria-hidden="true">⌂</span> Basecamp</button>
+    <button class="nav" data-nav="journey"><span aria-hidden="true">↗</span> Learning paths</button>
+    <button class="nav" data-nav="arcade"><span aria-hidden="true">◈</span> Game room</button>
+    <button class="nav" data-nav="journal"><span aria-hidden="true">▤</span> Field journal</button>
+   </nav>
+   <div class="rail-bottom"><div class="small-tag">THE RULE IS SIMPLE</div><p>You are the calculator.<br>The answer comes from you.</p><button class="text-button" id="settings-open">Settings & saved progress <span>↗</span></button><div class="offline-dot">Local · private · no accounts</div></div>
+  </aside>
+  <div class="body">
+   <header class="topbar">
+    <div><span class="eyebrow" id="location-label">YOUR BASECAMP</span><span class="save-state" id="save-state">Progress saved on this device</span></div>
+    <div class="hud"><span class="xp">✦ <strong id="xp-count">0</strong> XP</span><span class="level" id="level-label">Level 1</span><button id="review-top" class="review-pill">↺ Review <span id="due-count">0</span></button></div>
+   </header>
+   <main id="main">
+    <section id="home-view" class="view"></section>
+    <section id="journey-view" class="view" hidden></section>
+    <section id="arcade-view" class="view" hidden></section>
+    <section id="journal-view" class="view" hidden></section>
+    <section id="play-view" class="view" hidden></section>
+    <section id="result-view" class="view" hidden></section>
+   </main>
+   <footer><span>NUMBERCRAFT</span><span>Understanding → practice → return → remember.</span><button class="text-button" id="mobile-settings">Settings & progress</button><button class="text-button" id="about-open">How it works</button></footer>
+  </div>
+ </div>
+ <dialog id="lesson-dialog" aria-labelledby="lesson-title"><div id="lesson-content"></div></dialog>
+ <dialog id="settings-dialog" aria-labelledby="settings-title">
+  <div class="dialog-head"><span class="eyebrow">MAKE IT YOURS</span><button class="icon-button" data-close="settings-dialog" aria-label="Close settings">×</button></div>
+  <h2 id="settings-title">Your pace. Your progress.</h2>
+  <p class="muted">Progress belongs to this browser. Export a backup to take it with you.</p>
+  <label class="setting"><span>Sound effects<small>Soft notes for feedback</small></span><input type="checkbox" id="sound-setting"></label>
+  <label class="setting"><span>Reduced motion<small>Keep celebrations still</small></span><input type="checkbox" id="motion-setting"></label>
+  <label class="setting"><span>Daily target<small>Answered questions, with help welcome</small></span><select id="target-setting"><option value="5">5 questions</option><option value="10">10 questions</option><option value="20">20 questions</option></select></label>
+  <div class="backup-buttons"><button class="button secondary" id="export-progress">Export backup</button><label class="button secondary file-button">Import backup<input type="file" id="import-progress" accept=".json,application/json"></label></div>
+  <p id="settings-message" class="feedback" role="status"></p>
+  <details class="danger-zone"><summary>Start over</summary><p>This erases progress in this browser. Export a backup first if you want to keep it.</p><button id="reset-progress" class="button danger">Erase my progress</button></details>
+ </dialog>
+ <dialog id="about-dialog" aria-labelledby="about-title">
+  <div class="dialog-head"><span class="eyebrow">THE LONG GAME</span><button class="icon-button" data-close="about-dialog" aria-label="Close">×</button></div>
+  <h2 id="about-title">A game built around remembering.</h2>
+  <p>Every skill has an explanation, a rule, and worked examples. Every game generates new rounds from valid mathematical rules.</p>
+  <div class="about-steps"><p><b>01 · Understand</b><br>Read the lesson or open a worked example whenever you need it.</p><p><b>02 · Make the answer</b><br>The Answer Engine accepts numbers, decimals and fractions. It never evaluates an expression for you.</p><p><b>03 · Return to it</b><br>Missed questions come back. Successful recalls are scheduled further apart: a minute, ten minutes, a day, three days, a week, then three weeks.</p><p><b>04 · Keep growing</b><br>Earn XP, restore the observatory, and collect badges. Accuracy comes before speed. A timed mode is available when you want it.</p></div>
+  <p class="muted">Small multiplication and shape fact sets are finite and intentionally repeat. Across all tracks, randomized parameters create thousands of distinct problems and unlimited rounds. This game teaches and exercises its listed topics; it does not award academic credit or substitute for a full university degree.</p>
+  <button class="button primary" data-close="about-dialog">Back to Numbercraft</button>
+ </dialog>
+ <div id="toast" role="status"></div>
+ <noscript>This game needs JavaScript enabled. It works offline and requires no account.</noscript>
+ <script src="engine.js"></script><script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "numbercraft",
+  "version": "1.0.0",
+  "private": true,
+  "description": "An offline mathematics game with 61 skills, four minigames, and spaced review.",
+  "scripts": {
+    "build": "node scripts/build.cjs",
+    "test": "node tests/test-engine.cjs && node tests/test-game.cjs"
+  },
+  "engines": { "node": ">=20" }
+}
